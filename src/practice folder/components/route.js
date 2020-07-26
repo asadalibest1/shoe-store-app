@@ -28,20 +28,17 @@ const useStyles = makeStyles({
 
     return(
         <>
-        <Router>
           <ul>
             <li>
             <Link to="/" className={ classes.Li }>Home</Link>
             </li>
             <li>
-              <Link to="/products" className={ classes.Li }>Products</Link>
+              <Link exact to="/products" className={ classes.Li }>Products</Link>
             </li>
             <li>
-              <Link to="/about" className={ classes.Li }>About</Link>
+              <Link exact to="/about" className={ classes.Li }>About</Link>
             </li>
           </ul>
-        </Router>
-
         </>
         )
 }
