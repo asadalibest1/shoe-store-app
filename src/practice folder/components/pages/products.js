@@ -24,10 +24,14 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
+  heading:{
+    textAlign: "center",
+    color: "red",
+  },
   root: {
-    width: "360px",
+    width: "380px",
     // margin: "0 5vh",
-    margin: "0 auto",
+    margin: "auto",
     // border: "1px solid black",
     // display: "inline-block"
     
@@ -46,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
  div:{
    padding: "0px 5px",
-   marginTop: 100,
+   margin: "90px 10px 0px 10px",
   //  border: "1px solid black"
  }
 }));
@@ -67,8 +71,9 @@ export default function Products() {
   
 
 return (
-
-    <div className={classes.div}>
+  <>
+<div className={classes.div}>
+<h1 className={classes.heading}>Visite Your Favourite Product Here</h1>
 
           {/* <>
           <h3>{}</h3>
@@ -116,5 +121,8 @@ Object.keys(shoes).map((item)=>{
 </Grid>
 </Paper>
 
-      </div>  );
+      </div> 
+      </>
+      );
+
 }

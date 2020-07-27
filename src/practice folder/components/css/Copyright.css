@@ -1,0 +1,28 @@
+.copyRight{ 
+  /* margin-top: 30px; */
+    padding: 15px 0px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: blueviolet;
+    background-color: aqua;
+    
+}
+
+/* #page-container {
+    position: relative;
+    min-height: 540px;
+    margin: 0;
+    
+}
+  
+  #content-wrap {
+    margin: 0;
+  }
+  
+  #footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+  } */

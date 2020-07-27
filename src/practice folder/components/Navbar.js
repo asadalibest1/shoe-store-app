@@ -75,7 +75,7 @@ export default function Navbar() {
         <NavbarList />
 
           <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
+            Shoe Store App
           </Typography>
           
         </Toolbar>

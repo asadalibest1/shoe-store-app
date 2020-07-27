@@ -3,6 +3,8 @@ import Navbar from './components/Navbar';
 import Home from  './components/pages/home';
 import Products from  './components/pages/products';
 import About from  './components/pages/about';
+import Copyright from  './components/copyRight';
+import Footer from  './components/footer';
 
 // import Card from './components/cards';
 
@@ -10,12 +12,11 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
   } from "react-router-dom";
 
 export default function App1(){
     return(
-    <>
+    <div style={{margin:0, padding:0 }}>
         <Router>
         
             <Navbar />
@@ -32,8 +33,10 @@ export default function App1(){
                   </Route>
                 </Switch> 
           </Router>
+            <Footer />
+            <Copyright />
 
         
-    </>
+    </div>
     )
 }
