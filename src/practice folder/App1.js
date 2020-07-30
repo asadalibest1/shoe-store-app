@@ -5,6 +5,8 @@ import Products from  './components/pages/products';
 import About from  './components/pages/about';
 import Copyright from  './components/copyRight';
 import Footer from  './components/footer';
+import Cart from "./components/pages/Cart";
+import LaunchShoe from "./components/pages/launchShoe";
 
 // import Card from './components/cards';
 
@@ -21,16 +23,20 @@ export default function App1(){
         
             <Navbar />
             <Switch>        
-                  <Route exact path="/products">
-                        <Products />
-                  </Route>  
+                  <Route  path="/products/:slug" component={LaunchShoe} />
+                  <Route exact path="/products" component={Products} />
                   
-                  <Route exact path="/about">
+                  <Route path="/about">
                         <About />
                   </Route>
+                  <Route path="/cart">
+                        <Cart />
+                  </Route> 
                   <Route path="/">
                       <Home />
                   </Route>
+                  
+
                 </Switch> 
           </Router>
             <Footer />

@@ -30,9 +30,9 @@ function SimpleDialog(props) {
     onClose(selectedValue);
   };
 
-  const handleListItemClick = (value) => {
-    onClose(value);
-  };
+  // const handleListItemClick = (value) => {
+  //   onClose(value);
+  // };
 
   return (
     <Dialog onClose={handleClose} PaperProps={{
@@ -43,14 +43,14 @@ function SimpleDialog(props) {
       },
 }} aria-labelledby="simple-dialog-title" open={open}>
       
-      <ul>
-            <li>
+      <ul className="unorderedList">
+            <li className="List">
             <Link to="/" className={ classes.Li } onClick={handleClose}>Home</Link>
             </li>
-            <li>
+            <li className="List">
               <Link exact to="/products" className={ classes.Li } onClick={handleClose}>Products</Link>
             </li>
-            <li>
+            <li className="List">
               <Link exact to="/about" className={ classes.Li } onClick={handleClose}>About</Link>
             </li>
           </ul>

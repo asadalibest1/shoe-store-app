@@ -17,11 +17,11 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 // import Background from "../images/slide-image-1.jpg";
-import {shoes} from "../context/shoes";
-// import {getAllProducts} from "./context/shoeApi";
-
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Paper from '@material-ui/core/Paper';
+import {shoes, Shop} from "../context/api";
 import Grid from '@material-ui/core/Grid';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   heading:{
@@ -56,25 +56,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Products() {
-  // const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
   const classes = useStyles();
 
-// useEffect( () => {
-   
-//       getAllProducts().then( data => {
-//         // console.log(data)
-//         setProducts(data);
-//         // update_all_products(data);
-//       })
-//     // }
-//   },[])
-  
+const prize = [30, 29, 27, 32, 23, 26];
 
 return (
   <>
 <div className={classes.div}>
 <h1 className={classes.heading}>Visite Your Favourite Product Here</h1>
-
+{/* // {console.log(products)} */}
           {/* <>
           <h3>{}</h3>
           <h4>{shoes[item].name}</h4>
@@ -84,12 +75,12 @@ return (
 
 <Grid container spacing={2}>
 {
-Object.keys(shoes).map((item)=>{
+Object.keys(shoes).map((item, ind)=>{
         // console.log(shoes[item])
         return(
 <Grid xs="12" sm="4">
-    
-    <Card className={classes.root}>
+<Link to={"/products/"+item} >  
+    <Card key={item} className={classes.root}>
       <CardActionArea>
       <CardMedia
         className={classes.media}
@@ -104,15 +95,15 @@ Object.keys(shoes).map((item)=>{
       </CardContent>
       </CardActionArea>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+      <IconButton aria-label="shop" color="secondary">
+          <AddShoppingCartIcon />
         </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
+        <h4>{prize[ind]}$</h4>
+        
         
       </CardActions>        
     </Card>
+    </Link>
     </Grid>
  )
 })
