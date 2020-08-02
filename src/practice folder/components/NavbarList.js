@@ -51,6 +51,8 @@ function SimpleDialog(props) {
               <Link exact to="/products" className={ classes.Li } onClick={handleClose}>Products</Link>
             </li>
             <li className="List">
+              <Link exact to="/cart" className={ classes.Li } onClick={handleClose}>Carts</Link>
+            </li><li className="List">
               <Link exact to="/about" className={ classes.Li } onClick={handleClose}>About</Link>
             </li>
           </ul>

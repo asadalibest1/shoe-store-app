@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -8,7 +8,7 @@ import NavbarList from './NavbarList';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { Link } from "react-router-dom";
 import Badge from '@material-ui/core/Badge';
-
+import {Data} from "./context/Store";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -31,12 +31,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Navbar() {
+  const {data} = useContext(Data);
+
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
         
-      <AppBar position="fixed" color="primary" style={{overflow: "visible"}}>
+      <AppBar position="fixed" color="secondary" style={{overflow: "visible"}}>
         <Toolbar>
           
         <NavbarList />
@@ -48,7 +50,7 @@ export default function Navbar() {
               <Typography style={{width: "100%",textAlign: "right"}}>
   <Link to="/cart" >
                   <IconButton aria-label="add to favorites" style={{color: "white"}}>
-                    <Badge badgeContent={2} color="secondary">
+                    <Badge badgeContent={(data.length === 0) ? "0" : data.length} color="secondary">
                         <ShoppingCartIcon />
                     </Badge>
                 </IconButton>

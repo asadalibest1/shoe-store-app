@@ -1,16 +1,29 @@
 import React, {createContext} from 'react'
 
-const state = {};
-
-export const Data = createContext(state);
+const iState = [];
+export const Data = createContext(iState);
 
 const reducer = (state, action) =>{
     switch(action.type){
         
-        case "CHNAGE_ONE":{
+        case "ADD_VAL":{
 
-            return action.payload;
-        } 
+            return [
+                ...state,
+                {
+                id: action.id,
+                name: action.name,
+                img: action.img,
+                title: action.title,
+                prize: action.prize
+                }
+            ]
+        }
+        case "DELETE_LIST":{
+        return state.filter(item => item.id !== action.id)
+           
+    
+    }
         
         default : return state;     
         
@@ -19,27 +32,39 @@ const reducer = (state, action) =>{
 };
 
 export const TransProvider = ({children}) =>{
-    let [Data, dispatch] = React.useReducer(reducer, Data);
+    let [data, dispatch] = React.useReducer(reducer, iState);
     
 
-const changeVal = transObj =>{
+const addVal = (id, name, img, title, prize) =>{
     dispatch({
-        type: "CHNAGE_COUNTRY",
-        payload: transObj,
+        type: "ADD_VAL",
+        id,
+        name,
+        img,
+        title,
+        prize
+    })
+
+}
+const deleteVal = (id) =>{
+    dispatch({
+        type: "DELETE_LIST",
+        id,
     })
 
 } 
 
 const values ={
-    Data,
-    changeVal,
+    data,
+    addVal,
+    deleteVal,
 }
     return(
         <>
 
-        <CountryData.Provider value={values}>
+        <Data.Provider value={values}>
                 {children}
-        </CountryData.Provider>
+        </Data.Provider>
         
         </>
         

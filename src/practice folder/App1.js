@@ -7,7 +7,7 @@ import Copyright from  './components/copyRight';
 import Footer from  './components/footer';
 import Cart from "./components/pages/Cart";
 import LaunchShoe from "./components/pages/launchShoe";
-
+import {TransProvider} from './components/context/Store'
 // import Card from './components/cards';
 
 import {
@@ -19,26 +19,21 @@ import {
 export default function App1(){
     return(
     <div style={{margin:0, padding:0 }}>
-        <Router>
         
+          <TransProvider>
+            <Router>
             <Navbar />
-            <Switch>        
-                  <Route  path="/products/:slug" component={LaunchShoe} />
-                  <Route exact path="/products" component={Products} />
-                  
-                  <Route path="/about">
-                        <About />
-                  </Route>
-                  <Route path="/cart">
-                        <Cart />
-                  </Route> 
-                  <Route path="/">
-                      <Home />
-                  </Route>
+            <Switch>
+                  <Route path="/products/:slug" component={LaunchShoe} />
+                  <Route path="/products" component={Products} />
+                  <Route path="/cart" component={Cart} />
+                  <Route path="/about" component={About} />
+                  <Route path="/" component={Home} />
+                </Switch> 
                   
 
-                </Switch> 
-          </Router>
+              </Router>
+        </TransProvider>
             <Footer />
             <Copyright />
 

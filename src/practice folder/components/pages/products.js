@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -22,11 +22,12 @@ import Paper from '@material-ui/core/Paper';
 import {shoes, Shop} from "../context/api";
 import Grid from '@material-ui/core/Grid';
 import { Link } from "react-router-dom";
+import {Data} from "../context/Store"
 
 const useStyles = makeStyles((theme) => ({
   heading:{
     textAlign: "center",
-    color: "red",
+    color: "skyblue",
   },
   root: {
     width: "380px",
@@ -56,10 +57,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Products() {
+  const {addVal} = useContext(Data);
   const [products, setProducts] = useState([]);
   const classes = useStyles();
-
-const prize = [30, 29, 27, 32, 23, 26];
+  // console.log(data);
 
 return (
   <>
@@ -77,33 +78,34 @@ return (
 {
 Object.keys(shoes).map((item, ind)=>{
         // console.log(shoes[item])
+    const {name, img, prize} = shoes[item];
         return(
 <Grid xs="12" sm="4">
-<Link to={"/products/"+item} >  
     <Card key={item} className={classes.root}>
+<Link to={"/products/"+item} >  
       <CardActionArea>
       <CardMedia
         className={classes.media}
-        image={shoes[item].img}
+        image={img}
         title="Paella dish"
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           <p>{item}</p>
-          {shoes[item].name}
+          {name}
           </Typography>
       </CardContent>
       </CardActionArea>
+  </Link>
       <CardActions disableSpacing>
-      <IconButton aria-label="shop" color="secondary">
+      <IconButton aria-label="shop" color="secondary" onClick={()=>addVal(Math.random(), name, img, item, prize)}>
           <AddShoppingCartIcon />
         </IconButton>
-        <h4>{prize[ind]}$</h4>
+        <h4>{prize}$</h4>
         
         
       </CardActions>        
     </Card>
-    </Link>
     </Grid>
  )
 })
