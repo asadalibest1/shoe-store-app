@@ -19,8 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: "1vw",
-    // display: 'none',
-    width: "80vw",
+    width: "43vw",
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
@@ -42,10 +41,12 @@ export default function Navbar() {
         <Toolbar>
           
         <NavbarList />
+  <Link to="/" style={{color: "white", textDecoration: "none"}}>
+        <Typography className={classes.title} variant="h6" noWrap>
+          Shoe Store App
+        </Typography>
+  </Link>
 
-          <Typography className={classes.title} variant="h6" noWrap>
-            Shoe Store App
-          </Typography>
 
               <Typography style={{width: "100%",textAlign: "right"}}>
   <Link to="/cart" >

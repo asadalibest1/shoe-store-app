@@ -12,17 +12,17 @@ export default function Slider(){
           <Slide>
             <div className="each-fade">
               <div className="image-container">
-                <img style={{ height: "70vh", width: "100%" }} src={image1} />
+                <img alt="shoe-store" style={{ height: "70vh", width: "100%" }} src={image1} />
               </div>
             </div>
             <div className="each-fade">
               <div className="image-container">
-                <img style={{ height: "70vh", width: "100%" }} src={image3} />
+                <img alt="shoe-store" style={{ height: "70vh", width: "100%" }} src={image3} />
               </div>
             </div>
             <div className="each-fade">
               <div className="image-container">
-                <img style={{ height: "70vh", width: "100%" }} src={image4} />
+                <img alt="shoe-store" style={{ height: "70vh", width: "100%" }} src={image4} />
               </div>
             </div>
           </Slide>

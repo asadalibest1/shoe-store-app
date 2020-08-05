@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useParams } from "react-router-dom";
 import {shoes} from "../context/api";
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import {Data} from "../context/Store"
 
@@ -33,14 +32,13 @@ const {addVal} = useContext(Data);
 
 const classes = useStyles();
 
-// console.log(useParams());
 const { slug } = useParams();
 const shoe = shoes[slug];
 
 if (!shoe){
-    return <h1>404 not found!</h1>
+    return <h1 style={{marginTop: "100px", textAlign: "center", color: "red"}}>404 not found!</h1>
 }
-const {name , img} = shoe;
+const {name , img, prize} = shoe;
 return(
     <div className={classes.mainDiv}>
         <h1 className={classes.name}>{name}</h1>
@@ -49,7 +47,7 @@ return(
         
         <p>
       
-        <Button variant="contained" color="secondary" className={classes.Button} onClick={()=>addVal(name, img, slug)}>
+        <Button variant="contained" color="secondary" className={classes.Button} onClick={()=>addVal(Math.random(), name, img, slug, prize)}>
           <AddShoppingCartIcon className={classes.buttonIcon}/>
         Add to Cart
       </Button>

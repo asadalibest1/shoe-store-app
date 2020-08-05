@@ -30,10 +30,6 @@ function SimpleDialog(props) {
     onClose(selectedValue);
   };
 
-  // const handleListItemClick = (value) => {
-  //   onClose(value);
-  // };
-
   return (
     <Dialog onClose={handleClose} PaperProps={{
       style: {

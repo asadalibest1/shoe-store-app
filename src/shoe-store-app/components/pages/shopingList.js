@@ -1,16 +1,11 @@
 import React, {useContext} from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import { Grid } from "@material-ui/core";
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
-import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import SkipNextIcon from '@material-ui/icons/SkipNext';
-import img from "../../images/slide-image-1.jpg";
 import {Data} from "../context/Store"
 
 const useStyles = makeStyles((theme) => ({
@@ -21,16 +16,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     width: "100%",
-    // border: "1px solid black",
-
-    // marginLeft: "30px",
-    // width: "40vw",
   },
   details: {
     display: 'flex',
     flexDirection: 'column',
     width: "100%",
-    // border: "1px solid black",
 
   },
   content: {
@@ -38,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
   },
   cardLi:{
     display: "flex",
-        // border: "1px solid blue",
     marginTop: "30px",
   },
   image: {
@@ -61,7 +50,6 @@ export default function ImageList() {
   const {data, deleteVal} = useContext(Data);
  
   const classes = useStyles();
-  const theme = useTheme();
   var num = 0;
   return (
 <ol style={{paddingLeft: 5}}>
@@ -92,7 +80,6 @@ export default function ImageList() {
             </CardContent>
            </div>
     
-        {/* </Grid> */}
             </Card>
        
             
@@ -102,15 +89,3 @@ export default function ImageList() {
 </ol>
   );
 }
-
-/*{ <div className={classes.controls}>
-          <IconButton aria-label="previous">
-            {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
-          </IconButton>
-          <IconButton aria-label="play/pause">
-            <PlayArrowIcon className={classes.playIcon} />
-          </IconButton>
-          <IconButton aria-label="next">
-            {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
-          </IconButton>
-        </div> */

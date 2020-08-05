@@ -8,7 +8,6 @@ import Footer from  './components/footer';
 import Cart from "./components/pages/Cart";
 import LaunchShoe from "./components/pages/launchShoe";
 import {TransProvider} from './components/context/Store'
-// import Card from './components/cards';
 
 import {
     BrowserRouter as Router,

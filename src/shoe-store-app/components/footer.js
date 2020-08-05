@@ -30,8 +30,8 @@ export default function Footer() {
     <div className={classes.root}>
       <Paper elevation={3}>
       <h2 className={classes.h1}>Shop for Shoes Online</h2>
-<p className={classes.p}>Famous Shoe Store is your one-stop shop online for shoes. Whether your looking for running shoes, sandals, boots, work shoes, or even socks and slippers, there's a pair for you.
-Find your next pair of shoes today! Discover the latest styles of shoes for women, men, girls and boys from your favorite brands. With shoes from Nike, Vans, Converse, Skechers, adidas, Sperry, and more, you're bound to find the right fit.</p>
+      <p className={classes.p}>Famous Shoe Store is your one-stop shop online for shoes. Whether your looking for running shoes, sandals, boots, work shoes, or even socks and slippers, there's a pair for you.
+      Find your next pair of shoes today! Discover the latest styles of shoes for women, men, girls and boys from your favorite brands. With shoes from Nike, Vans, Converse, Skechers, adidas, Sperry, and more, you're bound to find the right fit.</p>
 
       </Paper>
     </div>
