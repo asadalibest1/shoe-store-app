@@ -36,7 +36,11 @@ const { slug } = useParams();
 const shoe = shoes[slug];
 
 if (!shoe){
-    return <h1 style={{marginTop: "100px", textAlign: "center", color: "red"}}>404 not found!</h1>
+    return <h1 style={{marginTop: "100px", textAlign: "center", color: 
+    
+    
+    
+    "red"}}>404 not found!</h1>
 }
 const {name , img, prize} = shoe;
 return(

@@ -21,13 +21,11 @@ const useStyles = makeStyles((theme) => ({
       padding: "20px",
     },
   },
-  p:{
-      fontSize: "14px"
-  },
   h1:{
     color: "skyblue",
   },
   bio:{
+    display: "inline",
     padding: 0,
     margin: 0,
     color: "purple"
@@ -42,33 +40,49 @@ export default function About() {
       <Paper elevation={3}>
 
     <h1 className={classes.h1}>About me</h1>
-            <h3 className={classes.bio}>
-            <IconButton edge="start" color="inherit" aria-label="Name">
-                        <PersonIcon />
-                  </IconButton>
-              Name: Asad Ali
-            </h3>
-            <h3 className={classes.bio}>
-            <IconButton edge="start" color="inherit" aria-label="Name">
+           <div>
+              <IconButton edge="start" style={{ color: "purple" }} aria-label="Name">
+                          <PersonIcon />
+                    </IconButton>
+              <h3 className={classes.bio}>
+                Name: Asad Ali
+              </h3>
+           </div>
+
+            
+            <div>
+            <IconButton edge="start" style={{ color: "purple" }} aria-label="Occupation">
                         <AccountCircleIcon />
                   </IconButton>
-            Occupation: MERN Stack Web Developer</h3>
             <h3 className={classes.bio}>
-            <IconButton edge="start" color="inherit" aria-label="Name">
+            Occupation: MERN Stack Web Developer</h3>
+            </div>
+
+            <div>
+            <IconButton edge="start" style={{ color: "purple" }} aria-label="Github">
                         <GitHubIcon />
                   </IconButton>
-            Github: github.com/asadalibest1</h3>
             <h3 className={classes.bio}>
-            <IconButton edge="start" color="inherit" aria-label="Name">
+            Github: github.com/asadalibest1</h3>
+            </div>
+
+            <div>
+            <IconButton edge="start" style={{ color: "purple" }} aria-label="Facebook">
                         <FacebookIcon />
                   </IconButton>
-            Facebook: facebook.com/asadali.asad.355</h3>
             <h3 className={classes.bio}>
-            <IconButton edge="start" color="inherit" aria-label="Name">
+            Facebook: facebook.com/asadali.asad.355</h3>
+            </div>
+
+            <div>
+            <IconButton edge="start" style={{ color: "purple" }} aria-label="Student">
                         <SchoolIcon />
                   </IconButton>
+            <h3 className={classes.bio}>
             Student at: Freelance and Remote Work BootCamp 2020</h3>
+      </div>
       </Paper>
+
     </div>
   );
 }
